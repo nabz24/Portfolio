@@ -1,13 +1,18 @@
 import React from "react";
+import { Container } from "@material-ui/core";
 
 const Legend = ({ legendItems }) => {
   console.log("zipiiis");
   console.log(legendItems);
   return (
-    <div
+    <Container
+      maxWidth="xl"
       style={{
+        height: "11vh",
+        padding: "0px",
         display: "flex",
         alignItems: "stretch",
+        width: "100%",
       }}
     >
       {legendItems.map((item) => (
@@ -22,13 +27,13 @@ const Legend = ({ legendItems }) => {
             color: item.textColor,
             height: "10vh",
             fontWeight: "bolder",
-            fontSize: "1.5em",
+            fontSize: "1.5vw",
           }}
         >
           <span>{item.title}</span>
         </div>
       ))}
-    </div>
+    </Container>
   );
 };
 

@@ -3,6 +3,7 @@ import CoronaMap from "./CoronaMap";
 import "leaflet/dist/leaflet.css";
 import "./CoronaMap.css";
 import { Map, Marker, Popup, TileLayer, GeoJSON } from "react-leaflet";
+import { Container } from "@material-ui/core";
 
 const CoronaMapCard = ({ states }) => {
   const mapStyle = {
@@ -31,8 +32,6 @@ const CoronaMapCard = ({ states }) => {
       confirmedText +
       "<br><b>Current Hospitalizations: </b>" +
       hospitalizedCurrText +
-      "<br><b>Total Hospitalizations: </b>" +
-      hospitalizedCumaText +
       "<br><b>Total deaths: </b>" +
       deathText +
       "</p>";
@@ -42,15 +41,15 @@ const CoronaMapCard = ({ states }) => {
   //console.log(states);
 
   return (
-    <div>
+    <Container maxWidth="100%" style={{ height: "55vh", padding: "0px" }}>
       <Map
-        style={{ height: "50vh", width: "100%" }}
-        center={[50, -100]}
-        zoom={4}
+        style={{ height: "55vh", width: "100%" }}
+        center={[37, -96]}
+        zoom={3.5}
       >
         <GeoJSON style={mapStyle} data={states} onEachFeature={onEachCountry} />
       </Map>
-    </div>
+    </Container>
   );
 };
 

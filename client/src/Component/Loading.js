@@ -1,9 +1,10 @@
 import React from "react";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Loading = () => {
   return (
     <div>
-      <h1>loading</h1>
+      <CircularProgress disableShrink />
     </div>
   );
 };
