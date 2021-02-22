@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Router } from "@reach/router";
+import { Link, Router, navigate } from "@reach/router";
 import Home from "./Component/home";
 import Projects from "./Component/Projects";
 import "./App.css";
@@ -40,6 +40,15 @@ function App() {
     setAnchorEl(null);
   };
 
+  function goHome() {
+    navigate("/home");
+  }
+
+  function goProject() {
+    setAnchorEl(null);
+    navigate("/projects");
+  }
+
   const classes = useStyles();
 
   return (
@@ -69,15 +78,11 @@ function App() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <Link to="/projects">
-              <MenuItem onClick={handleClose}>Projects</MenuItem>
-            </Link>
-            <Link to="/home">
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-            </Link>
+            <MenuItem onClick={goProject}>Projects</MenuItem>
+            <MenuItem onClick={handleClose}>My account</MenuItem>
             <MenuItem onClick={handleClose}>Logout</MenuItem>
           </Menu>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={classes.title} onClick={goHome}>
             Nabeel Services
           </Typography>
         </Toolbar>
