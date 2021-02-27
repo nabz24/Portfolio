@@ -28,7 +28,7 @@ const Projects = (props) => {
       image: ideaImage,
       name: "Ruby On Rails",
       details:
-        "This website named Idea is a ruby on rails web application. It is a forum where individuals can post ideas that they would like to share with the world. Individuals can like and view other users posts and likes. Idea is connected to a PostgreSQL database",
+        "Idea is a Ruby on Rails web application. It is a forum where individuals can post ideas that they would like to share with the world. Individuals can like and view other users posts and likes. Idea is connected to a PostgresSQL database",
       url: "https://rocky-everglades-62295.herokuapp.com/main",
       sourcecode: "https://github.com/nabz24/Ruby_Black_Test",
     },
@@ -36,7 +36,7 @@ const Projects = (props) => {
       image: wishlistImage,
       name: "Django",
       details:
-        "Wishlist is a website developed with Django and python. With WishList individuals can post what they would like for the holidays or any special occasion. Users can add other users wishes to their list or view other's wishlists. Wishlist is connected to a SQlite database",
+        "Wishlist is a website developed with Django and Python. With WishList, individuals can post what they would like for the holidays or any special occasion. Users can add other's wishes to their list or view other's wishlists. Wishlist is connected to a SQLite database",
       url: "https://frozen-depths-24914.herokuapp.com/",
       sourcecode: "https://github.com/nabz24/wish_list",
     },
@@ -44,7 +44,7 @@ const Projects = (props) => {
       image: friendsImage,
       name: "Angular",
       details:
-        "Full Friends is a angular web application designed to help individuals keep track of their friends or loved ones birthdays. The website is connected to a MongoDB database",
+        "Full Friends is a Angular web application designed to help individuals keep track of their friends or loved ones birthdays. The website is connected to a MongoDB database",
       url: "https://powerful-dawn-16339.herokuapp.com/dashboard",
       sourcecode: "https://github.com/nabz24/friends_mean",
     },
@@ -52,7 +52,7 @@ const Projects = (props) => {
       image: fireImage,
       name: "React",
       details:
-        "During the Califronia wildfires in 2020 mass evaciuations took place. In a blink of an eye, people were asked to leave there homes. This website was created to help household maintain a list of items that are essential for the next time evacuations occur. The website is connected to a MongoDB database",
+        "During recent times the spotlight on small businesses has been shinned brighter than ever. This app helps users keep track of their inventory. The website is connected to a MongoDB database",
       url: "http://54.219.181.231/",
       sourcecode: "https://github.com/nabz24/MERN-Deployment",
     },
@@ -62,7 +62,7 @@ const Projects = (props) => {
     <Container maxWidth="100%" style={useStyles.root}>
       <h3>
         Thank you for visiting my projects. Here are some website I have created
-        using various frameworks
+        using various frameworks.
       </h3>
       <Grid container spacing={2} align="center">
         <ProjectCard

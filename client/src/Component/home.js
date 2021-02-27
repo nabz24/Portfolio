@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "@material-ui/core";
 import PortfolioVideo from "./PortfolioVideo";
 import CoronaMap from "./CoronaMap";
-import axios from "axios";
+import Container from "@material-ui/core/Container";
 
 const Home = () => {
   return (

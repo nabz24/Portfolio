@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Router, navigate } from "@reach/router";
 import Home from "./Component/home";
 import Projects from "./Component/Projects";
+import AboutMe from "./Component/AboutMe";
 import "./App.css";
 import {
   AppBar,
@@ -27,7 +28,9 @@ function App() {
     title: {
       flexGrow: 2,
       textAlign: "center",
+      fontSize: "24px",
     },
+    navTitle: {},
   }));
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -41,12 +44,18 @@ function App() {
   };
 
   function goHome() {
+    setAnchorEl(null);
     navigate("/home");
   }
 
   function goProject() {
     setAnchorEl(null);
     navigate("/projects");
+  }
+
+  function goMe() {
+    setAnchorEl(null);
+    navigate("/aboutMe");
   }
 
   const classes = useStyles();
@@ -78,9 +87,15 @@ function App() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <MenuItem onClick={goProject}>Projects</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
+            <MenuItem className={classes.navTitle} onClick={goMe}>
+              About Me
+            </MenuItem>
+            <MenuItem className={classes.navTitle} onClick={goProject}>
+              Projects
+            </MenuItem>
+            <MenuItem className={classes.navTitle} onClick={goHome}>
+              Covid-19 Map
+            </MenuItem>
           </Menu>
           <Typography variant="h6" className={classes.title} onClick={goHome}>
             Nabeel Services
@@ -90,6 +105,7 @@ function App() {
       <Router>
         <Home path="/home" default />
         <Projects path="/projects" />
+        <AboutMe path="aboutMe" />
       </Router>
     </Container>
   );

@@ -12,13 +12,13 @@ import movie from "./Assets/My_Movie.mp4";
 const PortfolioVideo = () => {
   return (
     <Container
-      maxWidth="100%"
+      maxWidth="50%"
       style={{
-        backgroundColor: "grey",
         height: "70vh",
         padding: "10px",
         paddingTop: "20px",
         marginTop: "50px",
+        width: "95%",
       }}
     >
       <video width="100%" height="100%" controls>

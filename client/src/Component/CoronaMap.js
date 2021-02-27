@@ -25,7 +25,10 @@ const CoronaMap = () => {
   }, []);
 
   return (
-    <Container maxWidth="xl" style={{ height: "50%", padding: "0px" }}>
+    <Container
+      maxWidth="xl"
+      style={{ height: "50%", padding: "0px", width: "95%" }}
+    >
       {states.length === 0 ? (
         <Loading />
       ) : (
@@ -38,8 +41,8 @@ const CoronaMap = () => {
               textAlign: "center",
             }}
           >
-            Covid-19 Total Confirmed Cases by State Data for the United States.
-            Stay Safe!
+            Data for Covid-19 total confirmed cases by state for the United
+            States. Stay Safe!
           </h1>
           <CoronaMapCard states={states} />
           <Legend legendItems={legendItemsInReverse} />
