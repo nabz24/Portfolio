@@ -52,7 +52,7 @@ const Projects = (props) => {
       image: fireImage,
       name: "React",
       details:
-        "During recent times the spotlight on small businesses has been shinned brighter than ever. This app helps users keep track of their inventory. The website is connected to a MongoDB database",
+        "During the Califronia wildfires in 2020 mass evacuations took place. In a blink of an eye, people were asked to leave their homes. This website was created to help households maintain a list of items that are essential for the next time evacuations occur.",
       url: "http://54.219.181.231/",
       sourcecode: "https://github.com/nabz24/MERN-Deployment",
     },
