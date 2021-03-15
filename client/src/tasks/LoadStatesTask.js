@@ -9,58 +9,61 @@ class LoadStatesTask {
   mapStates = features;
   stateData = [];
 
+  //call api
   load = (setStates) => {
     axios
-      .get(`https://api.covidtracking.com/v1/states/current.json`)
+      .get(`https://corona.lmao.ninja/v2/states?sort=&yesterday=`)
       .then((res) => {
         this.stateData = res.data;
         this.processCovidData(this.stateData);
-        console.log(res.data);
-        //console.log(this.mapStates);
         setStates(this.mapStates);
       })
       .catch((err) => console.log(err));
   };
-
+  // put api data into states data that forms the leaflet states
   processCovidData = (covidStat) => {
-    console.log("hellop");
     for (let i = 0; i < this.mapStates.length; i++) {
       const mapState = this.mapStates[i];
       const covidState = covidStat.find(
-        (covidState) => covidState.state === mapState.properties.STUSPS
+        (covidState) => covidState.state === mapState.properties.NAME
       );
-
+      // create fields in dictionary so data can be entered
       mapState.properties.confirmed = 0;
       mapState.properties.confirmedText = "0";
       mapState.properties.checkTime = "";
       mapState.properties.death = 0;
       mapState.properties.deathText = "";
-      mapState.properties.hospitalizedCurr = 0;
-      mapState.properties.hospitalizedCurrText = "";
-      mapState.properties.hospitalizedCuma = 0;
-      mapState.properties.hospitalizedCumaText = "";
+      mapState.properties.todaysCases = 0;
+      mapState.properties.todaysCases = "";
+      mapState.properties.population = 0;
+      mapState.properties.populationText = "";
+      mapState.properties.populationPercent = 0;
+      mapState.properties.populationPercent = "";
 
       if (covidState != null) {
-        const confirmed = Number(covidState.positive);
-        const checkTime = covidState.checkTimeEt;
-        const death = Number(covidState.death);
-        const hospCurr = Number(covidState.hospitalizedCurrently);
-        const hospCuma = Number(covidState.hospitalizedCumulative);
+        const confirmed = Number(covidState.cases);
+        const checkTime = Date(covidState.updated);
+        const death = Number(covidState.deaths);
+        const todaysCases = Number(covidState.todayCases);
+        const population = Number(covidState.population);
+        const poulationsPerc = ((confirmed / population) * 100).toFixed(2);
         mapState.properties.confirmed = confirmed;
         mapState.properties.confirmedText = this.formatNumberWithCommas(
           confirmed
         );
-        mapState.properties.checkTime = checkTime;
+        mapState.properties.checkTime = checkTime.substr(0, 15);
         mapState.properties.death = death;
         mapState.properties.deathText = this.formatNumberWithCommas(death);
-        mapState.properties.hospitalizedCurr = hospCurr;
-        mapState.properties.hospitalizedCurrText = this.formatNumberWithCommas(
-          hospCurr
+        mapState.properties.todaysCases = todaysCases;
+        mapState.properties.todaysCasesText = this.formatNumberWithCommas(
+          todaysCases
         );
-        mapState.properties.hospitalizedCuma = hospCuma;
-        mapState.properties.hospitalizedCumaText = this.formatNumberWithCommas(
-          hospCuma
+        mapState.properties.population = population;
+        mapState.properties.populationText = this.formatNumberWithCommas(
+          population
         );
+        mapState.properties.populationPercent = poulationsPerc;
+        mapState.properties.populationPercentText = poulationsPerc + "%";
         this.setCountryColor(mapState);
       }
     }

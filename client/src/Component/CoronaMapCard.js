@@ -19,8 +19,9 @@ const CoronaMapCard = ({ states }) => {
     const confirmedText = state.properties.confirmedText;
     const checkTimeText = state.properties.checkTime;
     const deathText = state.properties.deathText;
-    const hospitalizedCurrText = state.properties.hospitalizedCurrText;
-    const hospitalizedCumaText = state.properties.hospitalizedCumaText;
+    const todaysCaseText = state.properties.todaysCasesText;
+    const populationText = state.properties.populationText;
+    const populationPercentText = state.properties.populationPercentText;
 
     var list =
       "<h2>" +
@@ -30,15 +31,17 @@ const CoronaMapCard = ({ states }) => {
       checkTimeText +
       "<br><b>Confirmed Cases: </b>" +
       confirmedText +
-      "<br><b>Current Hospitalizations: </b>" +
-      hospitalizedCurrText +
+      "<br><b>Current Cases: </b>" +
+      todaysCaseText +
       "<br><b>Total deaths: </b>" +
       deathText +
+      "<br><b>Population: </b>" +
+      populationText +
+      "<br><b>Percentage of Population that had confirmed cases: </b>" +
+      populationPercentText +
       "</p>";
     layer.bindPopup(list);
   };
-
-  //console.log(states);
 
   return (
     <Container maxWidth="100%" style={{ height: "55vh", padding: "0px" }}>

@@ -2,8 +2,6 @@ import React from "react";
 import { Container } from "@material-ui/core";
 
 const Legend = ({ legendItems }) => {
-  console.log("zipiiis");
-  console.log(legendItems);
   return (
     <Container
       maxWidth="xl"

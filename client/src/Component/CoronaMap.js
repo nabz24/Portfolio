@@ -21,7 +21,6 @@ const CoronaMap = () => {
   };
   useEffect(() => {
     load();
-    console.log(states);
   }, []);
 
   return (

@@ -3,7 +3,9 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 
 const Loading = () => {
   return (
-    <div>
+    <div
+      style={{ display: "flex", justifyContent: "center", paddingTop: "100px" }}
+    >
       <CircularProgress disableShrink />
     </div>
   );
