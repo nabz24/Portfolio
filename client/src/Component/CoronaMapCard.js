@@ -31,8 +31,6 @@ const CoronaMapCard = ({ states }) => {
       checkTimeText +
       "<br><b>Confirmed Cases: </b>" +
       confirmedText +
-      "<br><b>Current Cases: </b>" +
-      todaysCaseText +
       "<br><b>Total deaths: </b>" +
       deathText +
       "<br><b>Population: </b>" +
