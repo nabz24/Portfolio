@@ -4,6 +4,6 @@ This portfolio was created to show some of the work I have done with various pro
 <br>
 <br>
 ### Interactive Covid-19 Map
-The interactive Covid-19 Confirmed Cases map on the homepage was composed by using Leaflet.js as well as an api built by disease.sh. Disease.sh is an open API for disease related statistics.
+The interactive Covid-19 Confirmed Cases Map on the homepage was composed by using Leaflet.js as well as an api built by disease.sh. Disease.sh is an open API for disease related statistics.
 
 
